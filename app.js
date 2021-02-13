@@ -1,22 +1,20 @@
-//js ajaj
+//js ajaj program
 
 var myform = document.getElementById("myform");
-var err = document.getElementById("myform");
 
 
-//on submit to return results so either enter or submit button
+//Return results with either enter or submit button.
 
 myform.addEventListener('submit', (e) => { 
     loadFlickr();
     e.preventDefault();
     return false
-
 });
 
-
+//Async api call to load public flickr feed via Ajax with Json feed.
 function loadFlickr(){
 
-//err handeling
+//err handeling if input is empty
 var searchTerm = $('#search').val()
 if (!searchTerm)
 { alert("No Search Term") 
@@ -52,16 +50,15 @@ $("#outputDiv").html("Result: " + status + " " + error + " " + xhr.status + " " 
 $("#outputDiv").load(location.href + " #outputDiv");
 }
 
-//Nav bar and hamb design js
 
+//Nav bar and hamb design js
 
 const navSlide = () =>{
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-
-
+    //Listening for burger to be clicked on
     burger.addEventListener('click', ()=>{
         //Toggle nav
         nav.classList.toggle('nav-active');
@@ -75,15 +72,15 @@ const navSlide = () =>{
              link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
             }
             });
+        
             //Burger Animation
             burger.classList.toggle('toggle'); //burger aniamtion will form x when toggled
 
     });
-    // Animate links
  
 }
 
-/* functtion to call all other functions */
+// functtion to call navSlide
 
 const app = ()=>{
     navSlide();
@@ -91,6 +88,5 @@ const app = ()=>{
 
 app();
 
-//AJAj 
 
 
