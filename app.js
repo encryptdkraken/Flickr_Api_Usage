@@ -31,7 +31,7 @@ dataType: "jsonp", // jsonp, important because it will not return any data unles
 jsonpCallback: 'jsonFlickrFeed', // add this property
 success: function (result, status, xhr) {
  
-//Clear child element for parent div
+//Clear child element for parent div to get new elements on every call
 $("outputDiv").empty();    
     
 $.each(result.items, function (i, item) {
