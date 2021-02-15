@@ -1,25 +1,29 @@
-//js ajaj program
+//js ajaj
+
 var myform = document.getElementById("myform");
+var err = document.getElementById("myform");
 
 
-//Return results with either enter or submit button.
+//on submit to return results so either enter or submit button
+
 myform.addEventListener('submit', (e) => { 
     loadFlickr();
     e.preventDefault();
     return false
+
 });
 
-//Async api call to load public flickr feed via Ajax with Json feed.
+
 function loadFlickr(){
 
-//err handeling if input is empty
+//err handeling
 var searchTerm = $('#search').val()
 if (!searchTerm)
 { alert("No Search Term") 
 return } 
 
 //establishing the api variable
-var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + $("#search").val(); // search to val to api for personalized search
+var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + $("#search").val(); //concat search to val to api for personalized search
 
 //ajax to make the http req
 $.ajax({
@@ -29,6 +33,8 @@ jsonpCallback: 'jsonFlickrFeed', // add this property
 success: function (result, status, xhr) {
 $.each(result.items, function (i, item) {
 $("<img>").attr("src", item.media.m).appendTo("#outputDiv"); //appending image to html class
+
+
 
 //specifying 20 elements per page
 if (i === 20) {
