@@ -1,10 +1,8 @@
 //js ajaj program
-
 var myform = document.getElementById("myform");
 
 
 //Return results with either enter or submit button.
-
 myform.addEventListener('submit', (e) => { 
     loadFlickr();
     e.preventDefault();
@@ -52,7 +50,6 @@ $("#outputDiv").load(location.href + " #outputDiv");
 
 
 //Nav bar and hamb design js
-
 const navSlide = () =>{
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -60,16 +57,20 @@ const navSlide = () =>{
 
     //Listening for burger to be clicked on
     burger.addEventListener('click', ()=>{
+        
         //Toggle nav
         nav.classList.toggle('nav-active');
+        
         //Animate nav links
         navLinks.forEach((link, index)=> { // keeps nav options animated EVERYTIME burger is selected
             if(link.style.animation){
                 link.style.animation = '';
             }
             else{
-             // return links in burger menu with a delay betweene each arrival
+             
+                // return links in burger menu with a delay betweene each arrival
              link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                
             }
             });
         
@@ -81,7 +82,6 @@ const navSlide = () =>{
 }
 
 // functtion to call navSlide
-
 const app = ()=>{
     navSlide();
 }
