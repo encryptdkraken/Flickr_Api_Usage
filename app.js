@@ -30,6 +30,10 @@ url: flickerAPI,
 dataType: "jsonp", // jsonp, important because it will not return any data unless it's sepcific json p
 jsonpCallback: 'jsonFlickrFeed', // add this property
 success: function (result, status, xhr) {
+ 
+//Clear child element for parent div
+$("outputDiv").empty();    
+    
 $.each(result.items, function (i, item) {
 $("<img>").attr("src", item.media.m).appendTo("#outputDiv"); //appending image to html class
 
