@@ -21,7 +21,7 @@ if (!searchTerm)
 return } 
 
 //establishing the api variable
-var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + $("#search").val(); //concat search to val to api for personalized search
+var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + $("#search").val(); // search to val to api for personalized search
 
 //ajax to make the http req
 $.ajax({
