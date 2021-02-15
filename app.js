@@ -33,11 +33,10 @@ success: function (result, status, xhr) {
  
 //Clear child element for parent div to get new elements on every call
 $("outputDiv").empty();    
-    
+ 
+//Appending image to html class
 $.each(result.items, function (i, item) {
-$("<img>").attr("src", item.media.m).appendTo("#outputDiv"); //appending image to html class
-
-
+$("<img>").attr("src", item.media.m).appendTo("#outputDiv"); 
 
 //Specifying 20 elements per page
 if (i === 20) {
