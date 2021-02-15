@@ -4,8 +4,7 @@ var myform = document.getElementById("myform");
 var err = document.getElementById("myform");
 
 
-//on submit to return results so either enter or submit button
-
+//On submit to return results so either enter or submit button
 myform.addEventListener('submit', (e) => { 
     loadFlickr();
     e.preventDefault();
@@ -13,10 +12,10 @@ myform.addEventListener('submit', (e) => {
 
 });
 
-
+//Load Api call
 function loadFlickr(){
 
-//err handeling
+//Error handeling for empty search calls
 var searchTerm = $('#search').val()
 if (!searchTerm)
 { alert("No Search Term") 
@@ -25,7 +24,7 @@ return }
 //establishing the api variable
 var flickerAPI = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + $("#search").val(); //concat search to val to api for personalized search
 
-//ajax to make the http req
+//Ajax to make the http req with json feed
 $.ajax({
 url: flickerAPI,
 dataType: "jsonp", // jsonp, important because it will not return any data unless it's sepcific json p
@@ -36,14 +35,14 @@ $("<img>").attr("src", item.media.m).appendTo("#outputDiv"); //appending image t
 
 
 
-//specifying 20 elements per page
+//Specifying 20 elements per page
 if (i === 20) {
 return false;
 }
 });
 },
 
-//err handling
+//More errorh handling
 error: function (xhr, status, error) {
 console.log(xhr)
 $("#outputDiv").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
