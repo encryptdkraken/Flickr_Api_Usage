@@ -8,12 +8,13 @@ Asynchronous: Asynchronous calls do not block (or wait) for the API call to retu
 
 
 
-Ajax is A browser built-in XMLHttpRequest object tbephat can pull data requested from web servers via an applicatioin key, in this case we are calling from the Flickr api.
+Ajax is A browser built-in XMLHttpRequest object that can pull data requested from web servers via an applicatioin key, in this case we are calling from the Flickr api.
 
 
-//How to use
-
+How to use
 Simply type in what you want to search a picture for and the page shall load the first 20 images of that call from Flickrs public api.
+
+
 
 
 
